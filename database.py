@@ -12,11 +12,11 @@ class Database:
 
     def connect(self):
         self.conn = pg.connect(
-            user=os.environ["DB_USER"],
+            user=os.environ.get("DB_USER"),
             password=os.environ.get("DB_PW"),
-            host=os.environ["DB_HOST"],
-            port=os.environ["DB_PORT"],
-            database=os.environ["DB_NAME"],
+            host=os.environ.get("DB_HOST"),
+            port=os.environ.get("DB_PORT"),
+            database=os.environ.get("DB_NAME"),
         )
         self.curr = self.conn.cursor()
 
